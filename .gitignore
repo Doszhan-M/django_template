@@ -1,0 +1,14 @@
+**/.idea/
+**/venv/
+**/__pycache__/
+**/pgdata
+**/redis_data/
+celerybeat-schedule
+*.log*
+**/.scannerwork/
+staticfiles.json
+sqlite3
+
+test1.py
+test2.py
+test3.py

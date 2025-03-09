@@ -1,0 +1,49 @@
+networks:
+  default:
+    name: trust-soft
+    external: true
+
+volumes:
+  redis-trust-soft:
+    external: true
+    name: redis-trust-soft
+
+  pgdata-trust-soft:
+    external: true
+    name: pgdata-trust-soft
+
+services:
+  backend:
+    build: backend/.
+    entrypoint: ["sh", "./sh/backend.sh"]
+    restart: always
+    ports:
+      - "8000:8000"
+    env_file:
+      - env/backend.env
+    volumes:
+      - ./backend/app:/app/
+    mem_limit: 3GB
+    mem_reservation: 100m
+
+  postgres:
+    image: postgres:17.4
+    restart: always
+    env_file:
+      - env/postgresql.env
+    volumes:
+      - ./postgresql/master/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - pgdata-trust-soft:/var/lib/postgresql/data
+    mem_limit: 2GB
+    mem_reservation: 50m
+
+  redis:
+    image: redis:7.4
+    command: redis-server --requirepass redis_pass
+    restart: always
+    ports:
+      - 6379:6379
+    volumes:
+      - redis-trust-soft:/data
+    mem_limit: 1GB
+    mem_reservation: 50m

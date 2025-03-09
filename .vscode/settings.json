@@ -1,0 +1,77 @@
+{
+  // - - - StatusBar settings - - - - - - - - - - - - -
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#333333"
+  },
+  // - - - Folder's icon settings - - - - - - - - - - -
+  "material-icon-theme.folders.associations": {
+    "company": "App",
+    "accounts": "Admin",
+    "parsers_api": "Redux-selector",
+    "parsers_browser": "Redux-selector",
+    "parsers_cached": "Redux-selector",
+    "parsers_egov": "Redux-selector",
+    "parsers": "Redux-selector",
+    "egov": "Redux-selector",
+    "pk_backend": "Batch",
+    "managers": "Quasar",
+    "migrations": "Base",
+    "signals": "Contract",
+    "sh": "Scripts",
+    "serializers": "Storybook",
+    "deploy": "Flow",
+    "management": "Circleci",
+    "venv": "Python"
+  },
+  // - - - PythonPath settings- - - - - - - - - - - - -
+  "python.defaultInterpreterPath": "./venv/bin/python",
+  // - - - Formatter settings - - - - - - - - - - - - -
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+  // - - - Pylance settings - - - - - - - - - - - - -
+  "python.analysis.typeCheckingMode": "off",
+  // - - - TodoHighlighter settings - - - - - - - - - - - - -
+  "todoHighlighter.exclude": [
+    "**/node_modules/**",
+    "**/static/**",
+    "**/dist/**",
+    "**/venv/**"
+  ],
+  // - - - cSpell settings - - - - - - - - - - - - - - -
+  "cSpell.language": "en,ru",
+  "cSpell.words": [
+    "appuser",
+    "AUTOREFRESH",
+    "bnqc",
+    "celerybeat",
+    "CLIENTID",
+    "CLIENTKEY",
+    "colorlog",
+    "DBNAME",
+    "djangorestframework",
+    "dockerpass",
+    "elif",
+    "jazzmin",
+    "logfile",
+    "logformat",
+    "noinput",
+    "nostatic",
+    "pgbouncer",
+    "pycache",
+    "pydantic",
+    "PYTHONDONTWRITEBYTECODE",
+    "PYTHONUNBUFFERED",
+    "requirepass",
+    "runserver",
+    "scannerwork",
+    "startproject",
+    "staticfiles",
+    "topmenu",
+    "venv",
+    "watchfiles",
+    "wsgi",
+    "эндпойнт"
+  ]
+}

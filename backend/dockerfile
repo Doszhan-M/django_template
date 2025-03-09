@@ -1,0 +1,20 @@
+FROM python:3.13-slim-bookworm
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 
+
+RUN apt update && \
+    apt install --no-install-recommends -y curl && \
+    apt clean && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app/
+
+COPY app/requirements.txt ./
+RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
+
+COPY app/ ./
+
+RUN useradd -ms /bin/bash appuser && chown -R appuser:appuser ./
+USER appuser
+
+ENTRYPOINT [ "sh", "./sh/backend.sh" ]
